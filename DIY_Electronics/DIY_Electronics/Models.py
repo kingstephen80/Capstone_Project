@@ -13,7 +13,7 @@ class BlogPost(models.Model):
 
 class Projects(models.Model):
     title = models.CharField(60)
-    author = models.User
+    author = models.Users
     date = models.DateTimeField
     difficulty = models.CharField(choices=)
     instructions = models.TextField(max_length=365)
@@ -23,10 +23,12 @@ class Projects(models.Model):
     script_language = models.CharField(max_length=180)
 
 
-class User(models.Model):
-    first_name = models.CharField(max_length=60)
-    last_name = models.CharField(max_length=60)
-    email = models.EmailField
-    userName = models.CharField(max_length=60)
+class User(models.User):
+    first_name = User.first_name
+    last_name = user.last_name
+    email = user.email
+    userName = user.userName
+    password = user.password
+
 
 
