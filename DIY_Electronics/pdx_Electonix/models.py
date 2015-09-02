@@ -1,19 +1,11 @@
 from django.db import models
-
+from django.contrib.auth.models import User
 # Create your models here.
 
 
 __author__ = 'Stephen.king.pdx@gmail.com'
 
-from django.db import models
-from django.contrib.auth.models import User
 
-class BlogPost(models.Model):
-    text_main = models.TextField(max_length=365)
-    author = models.User
-    date = models.DateTimeField
-    topic = models.CharField(choices=Arduino,RaseberryPi,Intel-Galileo)
-    user_comments = models.TextField(max_length=130)
 
 # The projects model is for the creation and viewing of Electronic Prototyping User projects.
 # These can be viewed anytime and added to after user has been approved.
