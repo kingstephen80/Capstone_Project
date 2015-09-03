@@ -9,7 +9,7 @@ class BlogPost(models.Model):
     date = models.DateTimeField
     topic = models.CharField(max_length=4)
     user_comments = models.TextField(max_length=365)
-    # ID field
+    id
 
     def __unicode__(self):
         return self.author, self.date,
