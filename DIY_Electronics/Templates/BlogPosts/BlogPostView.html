@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}PDX Electronix{% endblock %}
+
+{% block header %}Writing about the latest and greatest tech gadgets for the DIY Electronics Makers {{ BlogPost.title }}?{% endblock %}
+
+
+{% block content %}
+
+<form method="get">
+    {% csrf_token %}
+    {{ form }}
+    <!--<input a page nav-tabs at header and footer << first page, < last page, >next page, >>last page, HOME main page>-->
+</form>
+
+{% endblock%}
