@@ -1,18 +1,26 @@
 from django.db import models
+from django.core.urlresolvers import reverse
 from django.contrib.auth.models import User
 
 
 class BlogPost(models.Model):
-    text_main = models.TextField(max_length=365)
-    title = models.CharField(max_length=120)
-    author = models.User
-    date = models.DateTimeField
+    title = models.CharField(max_length=255)
+    slug = models.SlugField(unique=True, max_length=255)
+    author = User
+    date = models.DateTimeField(auto_now_add=True)
+    text_main = models.TextField
     topic = models.CharField(max_length=4)
     user_comments = models.TextField(max_length=365)
-    id
+
+
+# class Meta:
+#         ordering = ['-created']
 
     def __unicode__(self):
-        return self.author, self.date,
+            return u'%s'%self.title,
+
+        # def get_absolute_url(self):
+        #     return reverse('BlogPost.views.post', args=[self.slug])
 
 
 class GeneralTopics(models.Model):

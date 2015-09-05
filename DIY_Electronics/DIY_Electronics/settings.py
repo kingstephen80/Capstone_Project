@@ -37,6 +37,9 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'BlogPosts',
+    'Community_chat',
+    'Projects',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -77,7 +80,7 @@ WSGI_APPLICATION = 'DIY_Electronics.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': 'PDX_Electronix',
     }
 }
 
