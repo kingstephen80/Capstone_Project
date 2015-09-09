@@ -53,12 +53,12 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.security.SecurityMiddleware',
 )
 
-ROOT_URLCONF = 'DIY_Electronics.urls'
+ROOT_URLCONF = 'DIY_Electronix_PDX-OR.urls'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['Templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -71,7 +71,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'DIY_Electronics.wsgi.application'
+WSGI_APPLICATION = 'DIY_Electronix_PDX-OR.wsgi.application'
 
 
 # Database

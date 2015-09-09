@@ -2,18 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{% block title %}My Site{% endblock %}</title>
-    <link rel="stylesheet" href="/static/style.css">
+    <title>{%block title%}My Site{%endblock%}</title>
+    <link rel="stylesheet" href="DIY_Electronics/Static/Static.css">
 </head>
 <body>
-
-<h1>{% block header %}{% endblock %}</h1>
-
-<div class="outer">
-
-    {% block content %}{% endblock %}
-
-</div>
+<h1>{%block header%}{%endblock%}</h1>
+<div class="outer">{%block content%}{%endblock%}</div>
 
 </body>
 </html>

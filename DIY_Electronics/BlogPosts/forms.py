@@ -4,12 +4,13 @@ from django import forms
 from .models import BlogPost, GeneralTopics
 
 
-class BlogCreateForm(forms.ModelForm):
+class BlogCreateNEW(forms.ModelForm):
     class Meta:
-        model = BlogPost
+        models = BlogPost
+        fields = '__all__'
 
 
-
-class TopicSelect(forms.ModelForm):
+class SelectTopic(forms.ModelForm):
     class Meta:
         model = GeneralTopics
+        fields = '__all__'

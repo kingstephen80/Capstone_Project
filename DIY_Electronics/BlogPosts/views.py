@@ -3,7 +3,7 @@ from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
 
 from .models import BlogPost, GeneralTopics
-from .forms import BlogCreateForm, TopicSelect
+from .forms import BlogCreateNEW, SelectTopic
 
 
 def new_blog_post(request, list_id):
@@ -13,13 +13,13 @@ def new_blog_post(request, list_id):
     )
 
     if request.method == 'POST':
-        form = BlogCreateForm(request.POST)
+        form = BlogCreateNEW(request.POST)
         if form.is_valid():
-            form.save(BlogCreateForm)
+            form.save(BlogCreateNEW)
             return HttpResponseRedirect(reverse('Your BlogPost has been Published', args=[list_id]))
 
         else:
-            form = BlogCreateForm()
+            form = BlogCreateNEW()
 
         return render(request, 'BlogPostNew.html',{
 
@@ -27,3 +27,9 @@ def new_blog_post(request, list_id):
             'header': header
         },
     )
+
+
+    # def new_post_topic(request):
+    #     new_post_topic = SelectTopic(request)
+    #     if
+    #
