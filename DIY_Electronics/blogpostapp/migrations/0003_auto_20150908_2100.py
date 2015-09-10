@@ -9,7 +9,7 @@ from django.utils.timezone import utc
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('BlogPosts', '0002_auto_20150908_2020'),
+        ('blogpostapp', '0002_auto_20150908_2020'),
     ]
 
     operations = [
@@ -26,6 +26,6 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='blogpost',
             name='topic',
-            field=models.ForeignKey(to='BlogPosts.GeneralTopics'),
+            field=models.ForeignKey(to='blogpostapp.GeneralTopics'),
         ),
     ]

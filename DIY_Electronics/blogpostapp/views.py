@@ -21,7 +21,7 @@ def new_blog_post(request, list_id):
         else:
             form = BlogCreateNEW()
 
-        return render(request, 'BlogPostNew.html',{
+        return render(request, 'blog_post_new.html',{
 
             'form': form,
             'header': header

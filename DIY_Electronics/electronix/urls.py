@@ -15,15 +15,18 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+from django.http import HttpResponse
 from django.contrib.auth import views as auth_views
+from blogpostapp import views as blogpostnew
+from electronix import views as homepage_views
 
 
 urlpatterns = [
+    # url('^', include('django.contrib.auth.urls')),
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^BlogPost/$', 'BlogPosts.views.new_blog_post', name='blog_post_new'),
-    url(r'^.../$', '', name=''),
-    url(r'^.../$', '', name=''),
-    url(r'^.../$', '', name=''),
-    url(r'^.../$', '', name=''),
-    url(r'^.../$', '', name=''),
+    url(r'^electonix/', include([
+        url(r'^homepage/$', electronix.views.homepage )
+    ]))
+
+    url(r'^blogpostapp/$', 'blogpostapp.views', name='blog_post_new')
 ]
