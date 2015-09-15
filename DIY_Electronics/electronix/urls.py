@@ -22,6 +22,6 @@ from electronix import views as homepage_views
 
 
 urlpatterns = [
-   url(r'^blogpostapp/', include('blogpostapp.urls')),
+   url(r'', include('blogpostapp.urls')),
    url(r'^admin/', include(admin.site.urls)),
    ]

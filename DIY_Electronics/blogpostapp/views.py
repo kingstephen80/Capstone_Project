@@ -9,8 +9,9 @@ from .forms import BlogCreateNEW, SelectTopic
 def newblogpost(request):
     return HttpResponse('This is THE  newblogpost view')
 
-def homepage(reqest):
-    return HttpResponse homepage.html
+
+def homepage(request):
+    return render(request, "Templates/homepage.html")
 
 
 
