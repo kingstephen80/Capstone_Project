@@ -38,8 +38,8 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blogpostapp',
-    'Community_chat',
-    'Projects',
+    'community',
+    'projects',
 )
 
 MIDDLEWARE_CLASSES = (

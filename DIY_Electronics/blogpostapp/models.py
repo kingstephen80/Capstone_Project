@@ -20,7 +20,7 @@ class GeneralTopics(models.Model):
         return self.topic
 
 
-class BlogPost(models.Model):
+class CreateBlogPost(models.Model):
     title = models.CharField(max_length=255)
     slug = models.SlugField(unique=True, max_length=255)
     author = User

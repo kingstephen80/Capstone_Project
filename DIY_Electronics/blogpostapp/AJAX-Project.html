@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax Test</title>
+</head>
+<body>
+<p>Just a simple text</p><div>
+    <button id="btnSubmit">load fruits</button>
+</div>
+<ol id="result"></ol>
+
+<script>
+    function doAjax() {
+        var xhr = new XMLHttpRequest();
+
+        xhr.onreadystatechange = function() {
+            if(xhr.readyState == 4 &&xhr.status == 200) {
+                alert(xhr.responseText);
+            }
+        }
+        xhr.open("GET",'/data.txt',true);
+        xhr.send();
+
+
+    }
+    document.getElementById("btnSubmit").addEventListener('click',function(e) {
+        doAjax();
+    });
+
+</script>
+</body>
+</html>

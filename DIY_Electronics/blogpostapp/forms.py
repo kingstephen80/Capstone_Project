@@ -1,12 +1,12 @@
 # __author__ = 'stephen.king.pdx@gmail.com'
 
 from django import forms
-from .models import BlogPost, GeneralTopics
+from .models import CreateBlogPost, GeneralTopics
 
 
 class BlogCreateNEW(forms.ModelForm):
     class Meta:
-        models = BlogPost
+        models = CreateBlogPost
         fields = '__all__'
 
 
