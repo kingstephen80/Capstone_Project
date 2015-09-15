@@ -25,6 +25,11 @@ body {
 h1 {
     text-align: center;
 }
+.container {
+    margin-top: 3mm;
+    margin-bottom: 3mm;
+    margin-left: 100%;
+}
 
 .helptext {
     font-size: 75%;

@@ -5,7 +5,7 @@
 #
 # # The projects model is for the creation and viewing of Electronic Prototyping User projects.
 # # These can be viewed anytime and added to after user has been approved.
-# class Projects(models.Model):
+# class projects(models.Model):
 #     title = models.CharField(60)
 #     user = models.OneToOneField()
 #     date = models.DateTimeField
