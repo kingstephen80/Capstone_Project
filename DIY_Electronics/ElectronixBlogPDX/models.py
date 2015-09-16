@@ -13,6 +13,7 @@ class BlogTopics(models.Model):
 
 class CreateNEW(models.Model):
     title = models.CharField(max_length=90)
+    author = models.ForeignKey('auth.User')
     date_created = models.DateTimeField(default=timezone.now)
     posted_date = models.DateTimeField(blank=True, null=True)
     main_text = models.TextField(max_length=5000, blank=True, null=True)
@@ -24,4 +25,4 @@ class CreateNEW(models.Model):
         self.save()
 
     def __str__(self):
-        return '%', self.title
+        return self.title
