@@ -37,9 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'blogpostapp',
-    'community',
-    'projects',
+    'ElectronixBlogPDX',
 )
 
 MIDDLEWARE_CLASSES = (

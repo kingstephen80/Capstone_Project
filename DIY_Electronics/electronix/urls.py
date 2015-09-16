@@ -15,13 +15,13 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
-from django.http import HttpResponse
-from django.contrib.auth import views as auth_views
-from blogpostapp import views as new_blog_post
-from electronix import views as homepage_views
+# from django.http import HttpResponse
+# from django.contrib.auth import views as auth_views
+# from ElectronixBlogPDX import views as new_blog_post
+# from electronix import views as homepage_views
 
 
 urlpatterns = [
-   url(r'', include('blogpostapp.urls')),
-   url(r'^admin/', include(admin.site.urls)),
-   ]
+    url(r'', include('ElectronixBlogPDX.urls')),
+    url(r'^admin/', include(admin.site.urls)),
+]
