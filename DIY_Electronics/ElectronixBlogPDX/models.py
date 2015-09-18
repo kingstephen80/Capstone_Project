@@ -1,6 +1,6 @@
 from django.db import models
 # from django.core.urlresolvers import reverse
-# from django.contrib.auth.models import User
+from django.contrib.auth.models import User
 from django.utils import timezone
 
 
@@ -13,7 +13,7 @@ class BlogTopics(models.Model):
 
 class CreateNEW(models.Model):
     title = models.CharField(max_length=90)
-    author = models.ForeignKey('auth.User')
+    author = User.get_full_name
     date_created = models.DateTimeField(default=timezone.now)
     posted_date = models.DateTimeField(blank=True, null=True)
     main_text = models.TextField(max_length=5000, blank=True, null=True)

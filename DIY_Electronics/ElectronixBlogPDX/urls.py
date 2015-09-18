@@ -9,5 +9,6 @@ from .import views
 
 urlpatterns = [
     url(r'^$', views.new_blog_post, name='new_blog_post'),
-    url(r'^$', views.homepage, name='homepage')
+    url(r'^$', views.homepage, name='homepage'),
+    # url(r'^$', views.post_list, name='post_list')
 ]

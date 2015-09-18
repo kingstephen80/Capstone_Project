@@ -9,7 +9,7 @@ class CreateNEW(forms.ModelForm):
         fields = '__all__'
 
 
-class CreateNEW(forms.ModelForm):
+class BlogTopics(forms.ModelForm):
     class Meta:
         model = BlogTopics
         fields = '__all__'

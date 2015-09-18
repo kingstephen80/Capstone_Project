@@ -7,10 +7,12 @@
 
 {% block content %}
 
-<form method="get">
-    {% csrf_token %}
-    {{ form }}
-    <!--<input a page nav-tabs at header and footer << first page, < last page, >next page, >>last page, HOME main page>-->
-</form>
+{% for post in posts %}
+            <div>
+                <p>published: {{ post.published_date }}</p>
+                <h1><a href="">{{ post.title }}</a></h1>
+                <p>{{ post.text|linebreaks }}</p>
+            </div>
+        {% endfor %}
 
 {% endblock%}
