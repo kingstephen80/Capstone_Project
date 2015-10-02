@@ -11,7 +11,7 @@ class Migration(migrations.Migration):
 
     dependencies = [
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
-        ('ElectronixBlogPDX', '0001_initial'),
+        ('electronix_pdx', '0001_initial'),
     ]
 
     operations = [

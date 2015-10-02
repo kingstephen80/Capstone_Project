@@ -1,15 +1,15 @@
 
 from django import forms
-from .models import BlogTopics, CreateNEW
+from .models import NewPost, BlogTopics
 
 
-class CreateNEW(forms.ModelForm):
+class BlogForm(forms.ModelForm):
     class Meta:
-        models = CreateNEW
+        models = NewPost
         fields = '__all__'
 
 
-class BlogTopics(forms.ModelForm):
+class TopicsForm(forms.ModelForm):
     class Meta:
         model = BlogTopics
         fields = '__all__'

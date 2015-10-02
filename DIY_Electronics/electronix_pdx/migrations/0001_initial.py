@@ -27,7 +27,7 @@ class Migration(migrations.Migration):
                 ('posted_date', models.DateTimeField(null=True, blank=True)),
                 ('main_text', models.TextField(max_length=5000, null=True, blank=True)),
                 ('comments', models.TextField(max_length=366)),
-                ('topic', models.ForeignKey(to='ElectronixBlogPDX.BlogTopics')),
+                ('topic', models.ForeignKey(to='electronix_pdx.BlogTopics')),
             ],
         ),
     ]

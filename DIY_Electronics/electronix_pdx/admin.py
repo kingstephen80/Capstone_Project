@@ -1,12 +1,12 @@
 from django.contrib import admin
 
 from .models import BlogTopics
-from .models import CreateNEW
+from .models import NewPost
 
 
-class CreateNEWAdmin(admin.ModelAdmin):
+class NewPostAdmin(admin.ModelAdmin):
     pass
-admin.site.register(CreateNEW, CreateNEWAdmin)
+admin.site.register(NewPost)
 
 
 class BlogTopicsAdmin(admin.ModelAdmin):
