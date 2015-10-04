@@ -11,12 +11,12 @@ class BlogTopics(models.Model):
 
 
 class NewPost(models.Model):
-    title = models.CharField(max_length=90)
     author = models.ForeignKey('auth.User')
+    title = models.CharField(max_length=90)
+    topic = models.ForeignKey(BlogTopics)
+    main_text = models.TextField(max_length=5000, blank=True, null=True)
     date_created = models.DateTimeField(default=timezone.now)
     posted_date = models.DateTimeField(blank=True, null=True)
-    main_text = models.TextField(max_length=5000, blank=True, null=True)
-    topic = models.ForeignKey(BlogTopics)
     comments = models.TextField(max_length=366)
 
     def publish(self):
