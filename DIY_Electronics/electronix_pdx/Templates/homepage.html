@@ -1,29 +1,23 @@
-<html>
-{% extends "electronix_pdx/templates/base.html" %}
+
+{% extends "base.html" %}
 
 
 
 {%block title%}homepage{%endblock%}
 
 
-% block header %}
+{% block header %}
   Homepage {{ user.username }}
 {% endblock %}
 
 
 {% block content %}
-{post the newest blog post here.}
-{display header and link to posts[2, 10]}
+sd;oi
+{% for post in posts %}
+{{post.title}}
+{{post.main_text}}
+{% endfor %}
+
 {% endblock %}
 
 
-<head>
-
-
-
-</head>
-<body>
-
-</body>
-
-</html>

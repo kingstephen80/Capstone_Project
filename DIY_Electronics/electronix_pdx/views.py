@@ -7,13 +7,13 @@ from .forms import BlogForm
 
 
 def post_list(request):
-    posts = NewPost.objects.filter(date_published__lte=timezone.now()).order_by('date_published')
-    return render(request, "Templates/homepage.html", {'posts': posts})
+    posts = NewPost.objects.all().order_by('posted_date')
+    return render(request, "homepage.html", {'posts': posts})
 
 
 def post_detail(request, pk):
     post = get_object_or_404(NewPost, pk=pk)
-    return render(request, "Templates/blogpost_single.html", {'post': post})
+    return render(request, "templates/blogpost_single.html", {'post': post})
 
 
 @login_required
@@ -28,7 +28,7 @@ def post_new(request):
             return redirect('electronix_pdx.views.post_detail', pk=post.pk)
     else:
         form = BlogForm()
-    return render(request, 'Templates/edit_blogpost.html', {'form': form})
+    return render(request, 'edit_blogpost.html', {'form': form})
 
 
 @login_required
@@ -45,13 +45,13 @@ def post_edit(request, pk):
 
     else:
         form = BlogForm(instance=post)
-    return render(request, 'Templates/edit_blogpost.html', {'form': form})
+    return render(request, 'templates/edit_blogpost.html', {'form': form})
 
 
 @login_required
 def post_draft_list(request):
     posts = NewPost.objects.filter(date_published__isnull=True).order_by('date_created')
-    return render(request, 'Templates/blogpost_draft.html', {'post': posts})
+    return render(request, 'templates/blogpost_draft.html', {'post': posts})
 
 
 @login_required

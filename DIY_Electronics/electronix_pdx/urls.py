@@ -7,7 +7,7 @@ from .import views
 
 urlpatterns = [
     url(r'^$', views.post_new, name='new_blog_post'),
-    url(r'^$', views.post_list, name='homepage'),
+    url(r'^list/$', views.post_list, name='post_list'),
     url(r'^blogpost/(?P<pk>[0-9]+)/$', views.post_detail, name='blogpost_single'),
     url(r'^edit/(?P<pk>[0-9]+)/blogpost/$', views.post_edit, name='edit_blogpost'),
     url(r'^draft/$', views.post_draft_list, name='blogpost_draft'),

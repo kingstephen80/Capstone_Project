@@ -23,8 +23,8 @@
 <h3>Electronix</h3>
 <nav>
     <ul class="nav nav-pills">
-        <li class="active"><a href="/DIY_Electronics/electronix_pdx/Templates/homepage.html">Home</a></li>
-        <li><a href="/DIY_Electronics/electronix_pdx/Templates/blogposts_all.html">Ancient History/ All Posts</a></li>
+        <li class="active"><a href="/DIY_Electronics/electronix_pdx/templates/homepage.html">Home</a></li>
+        <li><a href="/DIY_Electronics/electronix_pdx/templates/blogposts_all.html">Ancient History/ All Posts</a></li>
         <li><a href="#">Login</a></li>
         <li><a href="#">Projects</a></li>
         <li><a href="#">Community</a></li>
@@ -42,12 +42,12 @@
            {% else %}
         <a href="{% url 'django.contrib.auth.views.login' %}" class="top-menu"><span class="glyphicon glyphicon-lock"></span></a>
         {% endif %}
-        <h1><a href="{% url 'electonix_.views.post_list' %}">Black Lands</a></h1>
+        <h1><a href="{% url 'post_list' %}">Black Lands</a></h1>
     </div>
     <div class="content ">
         <div class="row">
             <div class="col-md-4"></div>
-            <div class="col-md-4">{% block content %}{% endblock %}</div>
+            <div class="col-md-4">{% block text %}{% endblock %}</div>
             <div class="col-md-4"></div>
 
              <div class="inner cover">

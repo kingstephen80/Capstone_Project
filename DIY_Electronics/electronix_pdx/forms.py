@@ -5,7 +5,7 @@ from .models import NewPost, BlogTopics
 
 class BlogForm(ModelForm):
     class Meta:
-        models = NewPost
+        model = NewPost
         fields = '__all__'
 
 
