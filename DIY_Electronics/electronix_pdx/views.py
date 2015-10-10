@@ -6,18 +6,18 @@ from .models import NewPost
 from .forms import BlogForm
 
 
-def post_list(request):
+def blogposts_all(request):
     posts = NewPost.objects.all().order_by('posted_date')
-    return render(request, "homepage.html", {'posts': posts})
+    return render(request, "blogposts_all.html", {'posts': posts})
 
 
-def post_detail(request, pk):
+def blogpost_single(request, pk):
     post = get_object_or_404(NewPost, pk=pk)
-    return render(request, "templates/blogpost_single.html", {'post': post})
+    return render(request, "Templates/blogpost_single.html", {'post': post})
 
 
 @login_required
-def post_new(request):
+def new_blog_post(request):
     if request.method == "POST":
         form = BlogForm(request.POST)
         if form.is_valid():
@@ -25,14 +25,14 @@ def post_new(request):
             post.author = request.user
             post.date_published = timezone.now()
             post.save()
-            return redirect('electronix_pdx.views.post_detail', pk=post.pk)
+            return redirect('electronix_pdx.views.blogpost_single', pk=post.pk)
     else:
         form = BlogForm()
     return render(request, 'edit_blogpost.html', {'form': form})
 
 
 @login_required
-def post_edit(request, pk):
+def edit_blogpost(request, pk):
     post = get_object_or_404(NewPost, pk=pk)
     if request.method == "POST":
         form = BlogForm(request.POST, instance=post)
@@ -41,28 +41,28 @@ def post_edit(request, pk):
             post.author = request.user
             post.date_published = timezone.now()
             post.save()
-            return redirect('electronix_pdx.views.post_detail', pk=post.pk)
+            return redirect('electronix_pdx.views.blogpost_single', pk=post.pk)
 
     else:
         form = BlogForm(instance=post)
-    return render(request, 'templates/edit_blogpost.html', {'form': form})
+    return render(request, 'Templates/edit_blogpost.html', {'form': form})
 
 
 @login_required
-def post_draft_list(request):
-    posts = NewPost.objects.filter(date_published__isnull=True).order_by('date_created')
-    return render(request, 'templates/blogpost_draft.html', {'post': posts})
+def blogpost_draft(request):
+    posts = NewPost.objects.filter(posted_date__isnull=True).order_by('date_created')
+    return render(request, 'Templates/blogpost_draft.html', {'post': posts})
 
 
 @login_required
 def post_publish(request, pk):
     post = get_object_or_404(NewPost, pk=pk)
     post.publish()
-    return redirect('electronix_pdx.views.post_detail', pk=pk)
+    return redirect('electronix_pdx.views.blogpost_single', pk=pk)
 
 
 @login_required
 def post_remove(request, pk):
     post = get_object_or_404(NewPost, pk=pk)
     post.delete()
-    return redirect('electronix_pdx.views.homepage')
+    return redirect('electronix_pdx.views.blogposts_all')

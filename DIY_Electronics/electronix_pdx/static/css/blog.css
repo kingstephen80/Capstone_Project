@@ -1,6 +1,6 @@
 body {
-    background-color: green;
-    padding: 5%;
+    background-color: wheat;
+    padding: 10%;
 }
 
 .outer {
@@ -16,7 +16,7 @@ body {
 }
 
 .container{
-    align-content:right;
+    align-content:left;
 
 }
 
@@ -33,13 +33,6 @@ h1 {
 }
 h3{
     text-align: center;
-
-}
-
-.container {
-    margin-top: 3mm;
-    margin-bottom: 3mm;
-    margin-left: 100%;
 }
 
 .helptext {

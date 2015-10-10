@@ -14,12 +14,17 @@
 
     <link href='https://fonts.googleapis.com/css?family=Macondo+Swash+Caps' rel='stylesheet' type='text/css'>
     <link href="http://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-    <!--<link rel="stylesheet" href='{% static "/static/css/blog.css" %}'>-->
-
+{#    <link rel="stylesheet" href="{% static "electonix_pdx/css/blog.css %}">#}
     <title>PDX Electronx</title>
 </head>
 <body>
      <div class="page-header">
+
+   {% if user.is_authenticated %}
+        <a href="{% url 'new_blog_post' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+        <a href="{% url 'blogpost_draft' %}" class="top-menu"><span class="glyphicon glyphicon-edit"></span> </a>
+
+
 <h3>Electronix</h3>
 <nav>
     <ul class="nav nav-pills">
@@ -32,9 +37,6 @@
         <li><a href="#">About</a></li>
     </ul>
 </nav>
-        {% if user.is_authenticated %}
-        <a href="{% url 'new_blog_post' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
-        <a href="{% url 'blogpost_draft' %}" class="top-menu"><span class="glyphicon glyphicon-edit"></span> </a>
 
 
              <p class="top-menu">Hello  {{ user.username }}  <small>  (<a href="{% url 'django.contrib.auth.views.logout' %}">Log out</a>)</small></p>
@@ -42,7 +44,7 @@
            {% else %}
         <a href="{% url 'django.contrib.auth.views.login' %}" class="top-menu"><span class="glyphicon glyphicon-lock"></span></a>
         {% endif %}
-        <h1><a href="{% url 'post_list' %}">Black Lands</a></h1>
+        <h1><a href="{% url 'blogposts_all' %}">Black Lands</a></h1>
     </div>
     <div class="content ">
         <div class="row">
