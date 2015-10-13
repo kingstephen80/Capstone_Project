@@ -4,10 +4,10 @@
 {% block content %}
     {%  for post in posts %}
         <div class="post">
-            <p class="date">created: {{ post.date_created|date:'d-m-y }}</p>
-            <h1><a href="{% url 'electronix_pdx.views.blogpost_single' pk=post.pk %}">{{ post.title }}</a></h1>
+            <p class="date"> created: {{ post.date_created|date:'d-m-y'}} </p>
+            <h1><a href="{% url 'single' pk=post.pk %}"> {{ post.title }}</a></h1>
         </div>
-
+{% endfor %}
 
 
 

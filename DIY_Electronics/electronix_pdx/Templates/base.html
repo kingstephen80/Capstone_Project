@@ -18,58 +18,30 @@
     <title>PDX Electronx</title>
 </head>
 <body>
-
 <nav>
     <ul class="nav nav-pills">
-        <li class="active"><a href="/DIY_Electronics/electronix_pdx/Templates/blogpost_single.html">Home</a></li>
-        <li><a href="/DIY_Electronics/electronix_pdx/Templates/blogposts_all.html">Ancient History/ All Posts</a></li>
-        <li><a href="#">Login</a></li>
-        <li><a href="#">Projects</a></li>
-        <li><a href="#">Community</a></li>
-        <li><a href="#">Cool Links</a></li>
+        <li class="active"><a href="/">Home</a></li>
+        <li><a href="blogposts_all.html">Ancient History/ All Posts</a></li>
+{#        <li><a href="#">Projects</a></li>#}
+{#        <li><a href="#">Community</a></li>#}
+{#        <li><a href="#">Cool Links</a></li>#}
         <li><a href="#">About</a></li>
     </ul>
 </nav>
-
-<div class="page-header">
-
-    {% if user.is_authenticated %}
-        <a href="{% url 'new_blog_post' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
-        <a href="{% url 'blogpost_draft' %}" class="top-menu"><span class="glyphicon glyphicon-edit"></span> </a>
-
-            <p style="color:green;font-size:x-large; text-align: center; ">Stephen's Electronics Blog</p><br>
-            <p style="color:green;font-size:x-large; text-align: center; ">Exploring the fun and new in Do It Yourself electonics</p>
+    <div class="page-header">
+        {% if user.is_authenticated %}
+            <a href="{% url "new_blog_post" %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+            <a href="{% url "blogpost_draft" %}" class="top-menu"><span class="glyphicon glyphicon-edit"></span> </a>
             <p class="top-menu">Hello  {{ user.username }}  <small>  (<a href="{% url "django.contrib.auth.views.logout" %}">Log out</a>)</small></p>
-           <h1><a href="{% url "blogposts_all" %}">Black Lands</a></h1>
+               <h1><a href="{% url 'electronix_pdx.views.blogposts_all' %}">DIY Electronix</a></h1>
 
-    {% else %}
-            <a href="{% url "django.contrib.auth.views.login" %}" class="top-menu"><span class="glyphicon glyphicon-lock"></span></a>
-    {% endif %}
-</div>
-    <div class="text">
-        <div class="row">
-            <div class="col-md-4"></div>
-            <div class="col-md-4">{% block text %}{% endblock %}</div>
-            <div class="col-md-4"></div>
+        {% else %}
+                <a href="{% url "django.contrib.auth.views.login" %}" class="top-menu"><span class="glyphicon glyphicon-lock"></span></a>
+        {% endif %}
+        <p style="color:green;font-size:x-large; text-align: center; ">Stephen's Electronics Blog</p><br>
+        <p style="color:green;font-size:x-large; text-align: center; ">Exploring the fun and new in Do It Yourself electronics.</p>
 
-             <div class="inner cover">
-{#                 <h1 class="cover-heading">You can read all the trending news on all DIY Electronics </h1>#}
-{#                 <p class="lead">This is a blog about the new things going on in the DIY Electronics field.</p>#}
-{#                 <p class="lead"> The goal I have in making this page is to create a place to find out the latest news for the DIY Electonics like Arduino, Raspberry Pi and others in the field. I will have a place to discuss these as a community, share projects and ideas</p>#}
-                    <br>
-                    <div class="container">{%block content%}{%endblock%}</div>
-                    <br>
-{#                 <p class="lead">Lets get covering this page</p>#}
-                 <p class="lead"><a href="#" class="btn btn-lrg btn-default"><p>Learn more about my cool site and me</p></a>This is another lead paragraph in the cover of this page.</p>
-             </div>
-
-         <div class="mastfoot">
-             <div class="inner">
-                 <p>DIY Electonix has used this bootstrap theme thanks to<a href="http://getbootstrap.com">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
-             </div>
-         </div>
-     </div>
-
+    </div>
 
 </body>
 </html>

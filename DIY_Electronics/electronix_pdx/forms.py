@@ -6,7 +6,7 @@ from .models import NewPost, BlogTopics
 class BlogForm(ModelForm):
     class Meta:
         model = NewPost
-        fields = '__all__'
+        fields = ('title', 'main_text')
 
 
 class TopicsForm(ModelForm):

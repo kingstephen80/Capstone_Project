@@ -7,13 +7,13 @@ from .forms import BlogForm
 
 
 def blogposts_all(request):
-    posts = NewPost.objects.all().order_by('posted_date')
-    return render(request, "blogposts_all.html", {'posts': posts})
+    posts = NewPost.objects.filter(posted_date__lte=timezone.now()).order_by('posted_date')
+    return render(request, 'blogposts_all.html', {'posts': posts})
 
 
 def blogpost_single(request, pk):
     post = get_object_or_404(NewPost, pk=pk)
-    return render(request, "Templates/blogpost_single.html", {'post': post})
+    return render(request, 'blogpost_single.html', {'post': post})
 
 
 @login_required
@@ -45,13 +45,13 @@ def edit_blogpost(request, pk):
 
     else:
         form = BlogForm(instance=post)
-    return render(request, 'Templates/edit_blogpost.html', {'form': form})
+    return render(request, 'edit_blogpost.html', {'form': form})
 
 
 @login_required
 def blogpost_draft(request):
     posts = NewPost.objects.filter(posted_date__isnull=True).order_by('date_created')
-    return render(request, 'Templates/blogpost_draft.html', {'post': posts})
+    return render(request, 'blogpost_draft.html', {'post': posts})
 
 
 @login_required

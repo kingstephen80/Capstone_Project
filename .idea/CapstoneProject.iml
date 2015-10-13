@@ -12,6 +12,7 @@
   </component>
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/DIY_Electronics/static" />
     </content>
     <orderEntry type="jdk" jdkName="Python 3.4.3 (C:\Python34\python.exe)" jdkType="Python SDK" />
@@ -19,5 +20,11 @@
   </component>
   <component name="TemplatesService">
     <option name="TEMPLATE_CONFIGURATION" value="Django" />
+    <option name="TEMPLATE_FOLDERS">
+      <list>
+        <option value="$MODULE_DIR$/DIY_Electronics/electronix_pdx/Templates" />
+        <option value="$MODULE_DIR$/DIY_Electronics/electronix_pdx/Templates/registration" />
+      </list>
+    </option>
   </component>
 </module>
