@@ -1,6 +1,7 @@
 
 from django.contrib.auth.decorators import login_required
 from django.utils import timezone
+
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import NewPost
 from .forms import BlogForm
@@ -23,12 +24,14 @@ def new_blog_post(request):
         if form.is_valid():
             post = form.save(commit=False)
             post.author = request.user
-            post.date_published = timezone.now()
+            # 10-19-15_2115: changed out date_published to posted_dated. date_published is from a tutorial I was
+            # working through.
+            post.posted_date = timezone.now()
             post.save()
             return redirect('electronix_pdx.views.blogpost_single', pk=post.pk)
     else:
         form = BlogForm()
-    return render(request, 'edit_blogpost.html', {'form': form})
+    return render(request, 'electronix_pdx/edit_blogpost.html', {'form': form})
 
 
 @login_required
@@ -39,7 +42,9 @@ def edit_blogpost(request, pk):
         if form.is_valid():
             post = form.save(commit=False)
             post.author = request.user
-            post.date_published = timezone.now()
+            post.posted_date = timezone.now()
+            # 10-19-15_2120: changed out date_published to posted_dated. date_published is from a tutorial I was
+            # working through.
             post.save()
             return redirect('electronix_pdx.views.blogpost_single', pk=post.pk)
 

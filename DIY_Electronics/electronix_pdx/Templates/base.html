@@ -21,7 +21,7 @@
 <nav>
     <ul class="nav nav-pills">
         <li class="active"><a href="/">Home</a></li>
-        <li><a href="blogposts_all.html">Ancient History/ All Posts</a></li>
+        <li><a href="blogposts_all.html">Ancient History</a></li>
 {#        <li><a href="#">Projects</a></li>#}
 {#        <li><a href="#">Community</a></li>#}
 {#        <li><a href="#">Cool Links</a></li>#}
@@ -40,7 +40,8 @@
         {% endif %}
         <p style="color:green;font-size:x-large; text-align: center; ">Stephen's Electronics Blog</p><br>
         <p style="color:green;font-size:x-large; text-align: center; ">Exploring the fun and new in Do It Yourself electronics.</p>
-
+		{% block content %}
+		{% endblock %}
     </div>
 
 </body>
