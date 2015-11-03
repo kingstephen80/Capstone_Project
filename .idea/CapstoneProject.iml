@@ -4,20 +4,27 @@
     <facet type="django" name="Django">
       <configuration>
         <option name="rootFolder" value="$MODULE_DIR$" />
-        <option name="settingsModule" value="" />
-        <option name="manageScript" value="" />
+        <option name="settingsModule" value="DIY_Electronics/electronix/settings.py" />
+        <option name="manageScript" value="DIY_Electronics/manage.py" />
         <option name="environment" value="&lt;map/&gt;" />
       </configuration>
     </facet>
   </component>
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
-      <excludeFolder url="file://$MODULE_DIR$/DIY_Electronics/static" />
+      <sourceFolder url="file://$MODULE_DIR$/DIY_Electronics/electronix_pdx/static/css" isTestSource="false" />
     </content>
-    <orderEntry type="jdk" jdkName="Python 3.4.3 (C:\Python34\python.exe)" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 2.7.10 (C:\Python27\python.exe)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
   <component name="TemplatesService">
     <option name="TEMPLATE_CONFIGURATION" value="Django" />
+    <option name="TEMPLATE_FOLDERS">
+      <list>
+        <option value="$MODULE_DIR$/DIY_Electronics/electronix_pdx/Templates" />
+        <option value="$MODULE_DIR$/DIY_Electronics/electronix_pdx/Templates/blog_updates" />
+        <option value="$MODULE_DIR$/DIY_Electronics/electronix_pdx/Templates/registration" />
+      </list>
+    </option>
   </component>
 </module>

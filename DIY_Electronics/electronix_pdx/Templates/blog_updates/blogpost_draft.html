@@ -1,0 +1,14 @@
+
+{% extends "blog_updates/base.html" %}
+
+{% block content %}
+{% for post in posts %}
+ <div class="post">
+ <p class="date">created: {{ post.posted_date|date:'d-m-y'}}</p>
+
+ <h1><a href="{% url 'electonix_pdx.views.blogpost_single' pk=post.pk %}">{{ post.title }}</a></h1>
+
+ <p>{{ post.text_main|truncatechars:200 }}</p>
+ </div>
+{% endfor %}
+{% endblock %}
