@@ -1,70 +1,73 @@
-
-<!--This tag is looking for CSS -->
 {% load staticfiles %}
+<!--This tag is looking for CSS -->
+{#electronix_pdx/Templates/blog_updates/base.html#}
+
 <html lang="en">
+
 <head>
+
+
+
+
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
 
     <link rel='jquery' href="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.4.js">
+
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="static/css/blog.css">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}" >
+
+{#    <link rel="stylesheet" href="static/styles.css">#}
 
     <link href='https://fonts.googleapis.com/css?family=Macondo+Swash+Caps' rel='stylesheet' type='text/css'>
+
     <link href="http://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-{#    <link rel="stylesheet" href="{% static "electonix_pdx/css/blog.css %}">#}
-    <title>PDX Electronix</title>
+
+
+    <title>DIY_Electronx Blog Spot</title>
 </head>
 <body>
+<div class="container ">
+{% block title %}<h1>DIY_Electronx Blog Spot</h1>{% endblock %}
      <div class="page-header">
 
    {% if user.is_authenticated %}
         <a href="{% url 'new_blog_post' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
         <a href="{% url 'blogpost_draft' %}" class="top-menu"><span class="glyphicon glyphicon-edit"></span> </a>
 
-
-<h3>Electronix</h3>
 <nav>
     <ul class="nav nav-pills">
-        <li class="active"><a href="homepage.html">Home</a></li>
-        <li><a href="blogposts_all.html">Ancient History/ All Posts</a></li>
-        <li><a href="#">About</a></li>
+        <li class="active"><a href="blogpost_single.html"><h2>Home</h2></a></li>
+        <li><a href="blogposts_all.html"><h2>All Posts</h2></a></li>
+        <li><a href="about.html"><h2>About</h2></a></li>
     </ul>
 </nav>
 
 
-             <p class="top-menu">Hello  {{ user.username }}  <small>  (<a href="{% url 'django.contrib.auth.views.logout' %}">Log out</a>)</small></p>
+             <h3 class="top-menu">Hello  {{ user.username }}  <large>  (<a href="{% url 'django.contrib.auth.views.logout' %}">Log out</a>)</large></h3>
 
            {% else %}
-        <a href="{% url 'django.contrib.auth.views.login' %}" class="top-menu"><span class="glyphicon glyphicon-lock"></span></a>
+        <a href="{% url 'login' %}" class="top-menu"><span class="glyphicon glyphicon-lock"></span></a>
         {% endif %}
-        <h1><a href="{% url 'blogposts_all' %}">Black Lands</a></h1>
-    </div>
-    <div class="content ">
-        <div class="row">
-            <div class="col-md-4"></div>
-            <div class="col-md-4">{% block text %}{% endblock %}</div>
-            <div class="col-md-4"></div>
-
-             <div class="inner cover">
-                 <h1 class="cover-heading">You can read all the trending news on all DIY Electronics </h1>
-                 <p class="lead">This is a blog about the new things going on in the DIY Electronics field.</p>
-                 <p class="lead"> The goal I have in making this page is to create a place to find out the latest news for the DIY Electonics like Arduino, Raspberry Pi and others in the field. I will have a place to discuss these as a community, share projects and ideas</p>
-                    <br>
-                    <div class="container">{%block content%}{%endblock%}</div>
-                    <br>
-                 <p class="lead">Lets get covering this page</p>
-                 <p class="lead"><a href="#" class="btn btn-lrg btn-default"><p>Learn more about my cool site and me</p></a>This is another lead paragraph in the cover of this page.</p>
-             </div>
-
-         <div class="mastfoot">
-             <div class="inner">
-                 <p>DIY Electonix has used this bootstrap theme thanks to<a href="http://getbootstrap.com">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
-             </div>
-         </div>
+{#        <h1><a href="{% url 'blogposts_all' %}">Black Lands</a></h1>#}
+{#    </div>#}
+{#    <div class="content ">#}
+{#         <div class="inner content">#}
+{#          <h1 class="cover-heading">You can read all the trending news on all DIY Electronics </h1>#}
+{#               <p class="lead">This is a blog about the new things going on in the DIY Electronics field.</p>#}
+{#             <p class="lead"> The goal I have in making this page is to create a place to find out the latest news for the DIY Electronics like Arduino, Raspberry Pi and others in the field. I will have a place to discuss these as a community, share projects and ideas</p>#}
+{##}
+{#             <p class="lead">Lets get covering this page</p>#}
+{#             <p class="lead"><a href="#" class="btn btn-lrg btn-default">Learn more about my cool site and me</a>This is another lead paragraph in the cover of this page.</p>#}
+{#             #}
+{#         </div>#}
      </div>
 
+
+{% block content %}{% endblock %}</div>
 </body>
 </html>

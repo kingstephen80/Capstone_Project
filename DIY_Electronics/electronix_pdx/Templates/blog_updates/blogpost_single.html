@@ -1,4 +1,6 @@
+{#<div class="container ">#}
 {% extends 'blog_updates/base.html' %}
+{% load staticfiles %}
 
 {% block content %}
     <div class="post">
@@ -7,10 +9,11 @@
                 {{ post.posted_date }}
             </div>
         {% endif %}
-        <a class="btn btn-default" href="{% url 'post_publish' pk=post.pk %}">><span class="glyphicon glyphicon-pencil"></span></a>
+        <a class="btn btn-default" href="{% url 'post_publish' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
         <h1>{{ post.title }}</h1>
         <p>{{ post.main_text|linebreaks }}</p>
     </div>
 
 
 {% endblock %}
+{#</div>#}

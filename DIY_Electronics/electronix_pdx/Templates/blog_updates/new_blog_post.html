@@ -1,27 +1,15 @@
-
-<html>
-{% extends "base.html" %}
-
-{%block title%}ElectronixBlogPDX
-{%endblock%}
+{#<div class="container">#}
+{% extends "blog_updates/base.html" %}
+{% load staticfiles %}
+{%block title%}{%endblock%}
 
 
 
-<head>
+{% block header %}{% endblock %}
 
-
-
-</head>
-<body>
-{% block header %} All the latest news in DIY Electonics
-{% endblock %}
-
-{% block content %}
-<div class="container">All the latest news in the field of D.I.Y. Electronics.</div>
-<div class="container">This is where latest post will go.
-</div>
-{% endblock %}
-
-</body>
-
-</html>
+    {% block content %}
+        <div class="container">All the latest news in the field of D.I.Y. Electronics.</div>
+        <div class="container">This is where latest post will go.
+        </div>
+    {% endblock %}
+{#</div>#}

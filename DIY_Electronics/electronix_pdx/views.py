@@ -65,3 +65,7 @@ def post_remove(request, pk):
     post = get_object_or_404(NewPost, pk=pk)
     post.delete()
     return redirect('electronix_pdx.views.blogposts_all')
+
+
+def about(request):
+    return redirect('blog_updates/about .html',)

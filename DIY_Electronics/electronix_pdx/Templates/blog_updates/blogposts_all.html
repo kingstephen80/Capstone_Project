@@ -1,5 +1,6 @@
+{#<div class="container ">#}
 {% extends 'blog_updates/base.html' %}
-
+{% load staticfiles %}
 {% block content %}
     {% for post in posts %}
         <div class="post">
@@ -8,4 +9,5 @@
             <p>{{ post.text|linebreaks }}</p>
     </div>
 {% endfor %}
-{% endblock content  %}
+{% endblock  %}
+{#</div>#}
