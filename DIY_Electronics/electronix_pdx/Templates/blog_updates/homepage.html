@@ -1,23 +1,11 @@
-{##}
-{#{% extends "base.html" %}#}
-{##}
-{##}
-{##}
-{#{%block title%}homepage{%endblock%}#}
-{##}
-{##}
-{#{% block header %}#}
-{#  Homepage {{ user.username }}#}
-{#{% endblock %}#}
-{##}
-{##}
-{#{% block content %}#}
-{#sd;oi#}
-{#{% for post in posts %}#}
-{#{{post.title}}#}
-{#{{post.main_text}}#}
-{#{% endfor %}#}
-{##}
-{#{% endblock %}#}
-{##}
-{##}
+{% extends "blog_updates/base.html" %}
+{% load staticfiles %}
+
+
+{% block content %}
+    <div class="post">
+            <div class="date">{{ latest_post.posted_date }}</div>
+                <h1><a href="{% url 'blogpost_single' pk=latest_post.pk %}">{{ latest_post.title }}</a></h1>
+            <p>{{ latest_post.main_text|linebreaks }}</p>
+    </div>
+{% endblock %}

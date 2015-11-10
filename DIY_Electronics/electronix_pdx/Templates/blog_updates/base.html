@@ -19,7 +19,7 @@
 
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 
-    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}" >
+    <link rel="stylesheet" type="text/css" href= "{% static "styles.css" %}">
 
 {#    <link rel="stylesheet" href="static/styles.css">#}
 
@@ -32,20 +32,20 @@
 </head>
 <body>
 <div class="container ">
-{% block title %}<h1>DIY_Electronx Blog Spot</h1>{% endblock %}
+{% block title %}<h1>DIY_Electronix Blog Spot</h1>{% endblock %}
      <div class="page-header">
-
+<nav>
+    <ul class="nav nav-pills">
+        <li class="active"><a href="/homepage/"><h2>Home</h2></a></li>
+        <li><a href="/"><h2>All posts</h2></a></li>
+        <li><a href="/about/"><h2>About DIY_Electronix</h2></a></li>
+    </ul>
+</nav>
    {% if user.is_authenticated %}
         <a href="{% url 'new_blog_post' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
         <a href="{% url 'blogpost_draft' %}" class="top-menu"><span class="glyphicon glyphicon-edit"></span> </a>
 
-<nav>
-    <ul class="nav nav-pills">
-        <li class="active"><a href="blogpost_single.html"><h2>Home</h2></a></li>
-        <li><a href="blogposts_all.html"><h2>All Posts</h2></a></li>
-        <li><a href="about.html"><h2>About</h2></a></li>
-    </ul>
-</nav>
+
 
 
              <h3 class="top-menu">Hello  {{ user.username }}  <large>  (<a href="{% url 'django.contrib.auth.views.logout' %}">Log out</a>)</large></h3>

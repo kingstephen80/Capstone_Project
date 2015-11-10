@@ -1,6 +1,6 @@
-
 from django.contrib.auth.decorators import login_required
 from django.utils import timezone
+from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import NewPost
 from .forms import BlogForm
@@ -23,7 +23,7 @@ def new_blog_post(request):
         if form.is_valid():
             post = form.save(commit=False)
             post.author = request.user
-            post.date_created = timezone.now()
+            post.posted_date = timezone.now()
             post.save()
             return redirect('electronix_pdx.views.blogpost_single', pk=post.pk)
     else:
@@ -39,13 +39,14 @@ def edit_blogpost(request, pk):
         if form.is_valid():
             post = form.save(commit=False)
             post.author = request.user
-            post.date_published = timezone.now()
+            post.posted_date = timezone.now()
             post.save()
             return redirect('electronix_pdx.views.blogpost_single', pk=post.pk)
 
     else:
         form = BlogForm(instance=post)
-    return render (request, 'blog_updates/blogpost_draft.html', {'form': form})
+    return render(request, 'blog_updates/edit_blogpost.html', {'form': form})
+
 
 @login_required
 def blogpost_draft(request):
@@ -55,9 +56,7 @@ def blogpost_draft(request):
 
 @login_required
 def post_publish(request, pk):
-    post = get_object_or_404(NewPost, pk=pk)
-    post.publish()
-    return redirect('electronix_pdx.views.blogpost_single', pk=pk)
+    return redirect('/admin/electronix_pdx/newpost/'+ str(pk) + "/")
 
 
 @login_required
@@ -68,4 +67,10 @@ def post_remove(request, pk):
 
 
 def about(request):
-    return redirect('blog_updates/about .html',)
+    return render(request, 'blog_updates/about.html')
+
+
+def homepage(request):
+  posts = NewPost.objects.latest("pk")
+  print (posts.pk)
+  return render(request, 'blog_updates/homepage.html', {'latest_post': posts})

@@ -6,7 +6,6 @@
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
       <jdbc-url>jdbc:sqlite:C:\Users\kings_000\CapStoneProject\CapstoneProject\DIY_Electronics\PDX_Electronix</jdbc-url>
-      <libraries />
     </data-source>
   </component>
 </project>
