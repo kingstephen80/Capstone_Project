@@ -88,14 +88,14 @@ font-family:'Macondo Swash Caps', cursive;
 text-align: center;
 }
 body {
-    background-color:5C6169;
+    background-color:lightgreen;
   padding-left: 5px;
 }
 
 .page-header {
     text-align: center;
 
-  background-color: 1C0303;
+  background-color:#1C0303;
   margin-top:0;
   padding: 17px 20px 20px 40px;
   height: 100px;
@@ -104,7 +104,7 @@ body {
 
 .page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
 
-    color:3B2C1D;
+    color:#3B2C1D;
     font-size:50pt;
     /*text-shadow: 4px 4px 4px #822208;*/
     text-decoration:none;
@@ -120,7 +120,7 @@ body {
 }
 
 h1, h2, h3, h4 {
-  font-family: 'Lobster', cursive;
+  font-family: 'Lobster', ;
 }
 
 .date {
@@ -159,3 +159,23 @@ h1, h2, h3, h4 {
     padding-right: 50px;
     color:greenyellow;
 }
+
+/*.overlay {*/
+/*position:absolute;*/
+ /*top:0;*/
+ /*left:0;*/
+ /*height:100%;*/
+ /*width:100%;*/
+/*background:#000;*/
+/*opacity:0;*/
+/*filter:alpha(opacity=0);*/
+/*z-index:50;*/
+/*}*/
+
+/*.container {*/
+/*position:absolute;*/
+/*opacity:0;*/
+/*filter:alpha(opacity=0);*/
+/*left:-9999em;*/
+/*z-index:51;*/
+/*}*/

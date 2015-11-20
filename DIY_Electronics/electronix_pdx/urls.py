@@ -21,4 +21,6 @@ urlpatterns = [
 
         url(r'^post/(?P<pk>[0-9]+)/remove/$', views.post_remove, name='post_remove'),
 
+        # url(r'^Images/$', ''),
+
         url(r'^accounts/login/$', 'django.contrib.auth.views.login', name='login')]

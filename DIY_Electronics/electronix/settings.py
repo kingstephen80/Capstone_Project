@@ -101,6 +101,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIR = ((os.path.join(BASE_DIR, 'electronix_pdx','static')),)
-# STATIC_ROOT = (os.path.join(BASE_DIR, 'electronix_pdx/static')),
+# STATICFILES_DIR = ((os.path.join(BASE_DIR, 'electronix_pdx','static')),)
+STATIC_ROOT = "/DIY_Electronics/electronix_pdx/static/"
 LOGIN_REDIRECT_URL = '/'
