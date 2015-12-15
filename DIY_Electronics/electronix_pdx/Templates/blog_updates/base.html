@@ -14,7 +14,7 @@
     <meta charset="UTF-8">
 
     <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
-    <script src="/Templates/blog_updates/Galleria/galleria-1.4.2.min.js/"></script>
+    <script src="{% static 'galleria-1.4.2.min.js' %}"></script>
 
 {#    <link rel='jquery' href="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.4.js">#}
 {#        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>#}
@@ -24,6 +24,8 @@
 
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 
+
+
     <link rel="stylesheet" type="text/css" href= "{% static 'styles.css' %}">
 
 {#    <link rel="stylesheet" href="static/styles.css">#}
@@ -31,12 +33,16 @@
     <link href='https://fonts.googleapis.com/css?family=Macondo+Swash+Caps' rel='stylesheet' type='text/css'>
 
     <link href="http://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+{# Galleria classic js added here #}
+    <script src="{% static 'galleria.classic.js' %}"></script>
+
+    <link rel="stylesheet" href="{% static 'galleria.classic.css' %}">
 
     <title>DIY_Electronx Blog Spot</title>
-</head>
+`</head>
 <body>
 
-<div class="container ">
+<div class="container">
 {% block title %}<h1>DIY_Electronix Blog Spot</h1>{% endblock %}
      <div class="page-header">
 <nav>
@@ -46,24 +52,125 @@
         <li><a href="/about/"><h2>About DIY_Electronix</h2></a></li>
     </ul>
 </nav>
+{#<script>#}
+{#    Galleria.loadTheme('Galleria/themes/galleria.classic.min.js');#}
+{#    Galleria.configure({#}
+{#        transition: 'fade',#}
+{#        imageCrop: true,#}
+{#        carousel: true,#}
+{##}
+{#    })#}
+{#    Galleria.run('.galleria', {#}
+{#        carouselSpeed: 500,#}
+{#        carouselSteps: 1#}
+{#    });#}
+{#</script>#}
+{#<div id="carousel_images "class="row span9" style="alignment: center">#}
+{#        <div class="galleria-image col-xs-6 col-md-3" align="right"><a href="{% static 'Images/photoArduino.jpg' %}"><img src="{% static 'Images/photoArduino.jpg' %}" data-title="Arduino board" data-description="Arduino board"/></div>#}
+{#        <div class="galleria-image col-xs-6 col-md-3" align="center"><a href="{% static 'Images/photoEdison.png'  %}"><img src="{% static 'Images/photoEdison.png'  %}" data-title="Edison board" data-description="Edison board"/></div>#}
+{#        <div class="galleria-image col-xs-6 col-md-3" align="left"><a href="{% static 'Images/photoGalileo.png'  %}"><img src="{% static 'Images/photoGalileo.png'  %}" data-title="Galileo Board" data-description="Galileo Board"/></div>#}
+{#        <div class="galleria-image col-xs-6 col-md-3" align="center"><a href="{% static 'Images/photoRaspberry.jpg'  %}"><img src="{% static 'Images/photoRaspberry.jpg'  %}" data-title="Raspberry border" data-description="Raspberry Board"/></div>#}
+{#</div>#}
 
-<div class="galleria">
-    <img src="/Images/photoArduino.jpg" data-title="Arduino board" data-description="Arduino board">
-    <img src="/Images/photoEdison.png" data-title="Edison board" data-description="Edison board">
-    <img src="/Images/photoGalileo.png" data-title="Galileo Board" data-description="Galileo Board">
-    <img src="/Images/photoRaspberry.jpg" data-title="Raspberry border" data-description="Raspberry Board">
-</div>
+     <!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Galleria Classic Theme</title>
+        <style>
 
-<script>
-    Galleria.loadTheme('galleria/themes/classic/galleria.classic.min.js');
-    Galleria.run('.galleria');
-</script>
+            /* Demo styles */
+            html,body{background:#222;margin:0;}
+            body{border-top:4px solid #000;}
+            .content{color:#777;font:12px/1.4 "helvetica neue",arial,sans-serif;width:620px;margin:20px auto;}
+            h1{font-size:12px;font-weight:normal;color:#ddd;margin:0;}
+            p{margin:0 0 20px}
+            a {color:#22BCB9;text-decoration:none;}
+            .cred{margin-top:20px;font-size:11px;}
+
+            /* This rule is read by Galleria to define the gallery height: */
+            #galleria{height:320px}
+
+        </style>
+
+        <!-- load jQuery -->
+        <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+{#        <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>#}
+
+        <!-- load Galleria -->
+        <script src="/Templates/blog_updates/Galleria/themes/classic/galleria.classic.js"></script>
+
+    </head>
+<body>
+    <div class="content">
+        <h1>Micro-controller board gallery</h1>
+        <p>Check out some of the common boards used in our projects.</p>
+
+        <!-- Adding gallery images. We use resized thumbnails here for better performance, but it’s not necessary -->
+
+        <div id="galleria">
+
+{#            <a href="https://upload.wikimedia.org/wikipedia/commons/6/6f/Raspberry_Pi_B%2B_top.jpg/800px-Raspberry_pi.jpg">#}
+{#                <img#}
+{#                    src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Raspberry_Pi_B%2B_top.jpg/120px-Raspberry_pi.jpg",#}
+{#                    data-big="https://upload.wikimedia.org/wikipedia/commons/6/6f/Raspberry_Pi_B%2B_top.jpg/1400px-Raspberry_pi.jpg",#}
+{#                    data-title="Raspberry_pi"#}
+{#                    data-description="Raspberry_Pi micro-controller board."#}
+{#                >#}
+{#            </a>#}
+            <a href="http://cdn.shopify.com/s/files/1/0775/1525/products/UNO-front_1024x1024.jpg?v=1449849152/800px-arduino_uno.jpg">
+                <img
+                    src="http://cdn.shopify.com/s/files/1/0775/1525/products/UNO-front_1024x1024.jpg?v=1449849152/120px-arduino_uno.jpg",
+                    data-big="http://cdn.shopify.com/s/files/1/0775/1525/products/UNO-front_1024x1024.jpg?v=1449849152/1400-px-arduino_uno.jpg",
+                    data-title="arduino Uno"
+                    data-discription="Arduino Uno"
+                    >
+            </a>
+            <a href="/static/Images/photoArduino.jpg/800px-arduino_1.jpg">
+            <img
+                src="static/Images/photoArduino.jpg/120px-arduino_1.jpg",
+                data-big="static/Images/photoArduino.jpg/1400px-arduino_1.jpg",
+                data-title="Arduino-1 images"
+                data-discription="Arduino is a great micro-controller fir do it yourself projects"
+            >
+
+
+            </a>
+
+            <a href="http://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Oxbow_Bend_outlook_in_the_Grand_Teton_National_Park.jpg/800px-Oxbow_Bend_outlook_in_the_Grand_Teton_National_Park.jpg">
+                <img
+                    src="http://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Oxbow_Bend_outlook_in_the_Grand_Teton_National_Park.jpg/100px-Oxbow_Bend_outlook_in_the_Grand_Teton_National_Park.jpg",
+                    data-big="http://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Oxbow_Bend_outlook_in_the_Grand_Teton_National_Park.jpg/1280px-Oxbow_Bend_outlook_in_the_Grand_Teton_National_Park.jpg"
+                    data-title="Oxbow Bend outlook"
+                    data-description="View over the Snake River to the Mount Moran with the Skillet Glacier."
+                >
+            </a>
+
+
+        </div>
+
+        <p class="cred">Made by <a href="http://galleria.aino.se">Galleria</a>.</p>
+    </div>
+
+    <script>
+
+    // Load the classic theme
+    Galleria.loadTheme('{% static "galleria.classic.min.js" %}');
+
+    // Initialize Galleria
+    Galleria.run('#galleria');
+
+    </script>
+    </body>
+</html>
+
+
+
+{% block content %}
+
    {% if user.is_authenticated %}
         <a href="{% url 'new_blog_post' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
         <a href="{% url 'blogpost_draft' %}" class="top-menu"><span class="glyphicon glyphicon-edit"></span> </a>
-
-
-
 
              <h3 class="top-menu">Hello  {{ user.username }}  <large>  (<a href="{% url 'django.contrib.auth.views.logout' %}">Log out</a>)</large></h3>
 {#       adding Jquery Galleria to this page, using the beginers guide 11-15-15#}
@@ -80,16 +187,16 @@
 {##}
 {#             <p class="lead">Lets get covering this page</p>#}
 {#             <p class="lead"><a href="#" class="btn btn-lrg btn-default">Learn more about my cool site and me</a>This is another lead paragraph in the cover of this page.</p>#}
-{#             #}
+{##}
 {#         </div>#}
      </div>
 
+{##}
+{#<script>#}
+{#    if (Galleria) { $("body").text('Galleria works') }#}
+{#</script>#}
 
-<script>
-    if (Galleria) { $("body").text('Galleria works') }
-</script>
 
-{% block content %}
 <script>
     if (Galleria) { $("body").text('Galleria works') }
 </script>
