@@ -17,7 +17,7 @@
     <script src="{% static 'galleria-1.4.2.min.js' %}"></script>
 
 {#    <link rel='jquery' href="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.4.js">#}
-{#        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>#}
+{#    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>#}
 
     <style>.galleria{ width: 700px; height: 400px; background: #000 }</style>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
@@ -27,7 +27,8 @@
 
 
     <link rel="stylesheet" type="text/css" href= "{% static 'styles.css' %}">
-
+  {#  <link rel="images" type="images" href="{% Images 'photoArduino.jpg, photoEdison.png, photoGalileo.png, photoRaspberry.jpg'%}"> #}
+<!--- In the above link I was trying to preload the images for --->
 {#    <link rel="stylesheet" href="static/styles.css">#}
 
     <link href='https://fonts.googleapis.com/css?family=Macondo+Swash+Caps' rel='stylesheet' type='text/css'>
@@ -66,10 +67,10 @@
 {#    });#}
 {#</script>#}
 {#<div id="carousel_images "class="row span9" style="alignment: center">#}
-{#        <div class="galleria-image col-xs-6 col-md-3" align="right"><a href="{% static 'Images/photoArduino.jpg' %}"><img src="{% static 'Images/photoArduino.jpg' %}" data-title="Arduino board" data-description="Arduino board"/></div>#}
-{#        <div class="galleria-image col-xs-6 col-md-3" align="center"><a href="{% static 'Images/photoEdison.png'  %}"><img src="{% static 'Images/photoEdison.png'  %}" data-title="Edison board" data-description="Edison board"/></div>#}
-{#        <div class="galleria-image col-xs-6 col-md-3" align="left"><a href="{% static 'Images/photoGalileo.png'  %}"><img src="{% static 'Images/photoGalileo.png'  %}" data-title="Galileo Board" data-description="Galileo Board"/></div>#}
-{#        <div class="galleria-image col-xs-6 col-md-3" align="center"><a href="{% static 'Images/photoRaspberry.jpg'  %}"><img src="{% static 'Images/photoRaspberry.jpg'  %}" data-title="Raspberry border" data-description="Raspberry Board"/></div>#}
+{#        <div class="galleria-image col-xs-6 col-md-3" align="right"><img src="{% static 'Images/photoArduino.jpg' %}" data-title="Arduino board" data-description="Arduino board"/></div>#}
+{#        <div class="galleria-image col-xs-6 col-md-3" align="center"><img src="{% static 'Images/photoEdison.png'  %}" data-title="Edison board" data-description="Edison board"/></div>#}
+{#        <div class="galleria-image col-xs-6 col-md-3" align="left"><img src="{% static 'Images/photoGalileo.png'  %}" data-title="Galileo Board" data-description="Galileo Board"/></div>#}
+{#        <div class="galleria-image col-xs-6 col-md-3" align="center"><img src="{% static 'Images/photoRaspberry.jpg'  %}" data-title="Raspberry border" data-description="Raspberry Board"/></div>#}
 {#</div>#}
 
      <!DOCTYPE html>
@@ -110,26 +111,27 @@
 
         <div id="galleria">
 
-{#            <a href="https://upload.wikimedia.org/wikipedia/commons/6/6f/Raspberry_Pi_B%2B_top.jpg/800px-Raspberry_pi.jpg">#}
-{#                <img#}
-{#                    src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Raspberry_Pi_B%2B_top.jpg/120px-Raspberry_pi.jpg",#}
-{#                    data-big="https://upload.wikimedia.org/wikipedia/commons/6/6f/Raspberry_Pi_B%2B_top.jpg/1400px-Raspberry_pi.jpg",#}
-{#                    data-title="Raspberry_pi"#}
-{#                    data-description="Raspberry_Pi micro-controller board."#}
-{#                >#}
-{#            </a>#}
-            <a href="http://cdn.shopify.com/s/files/1/0775/1525/products/UNO-front_1024x1024.jpg?v=1449849152/800px-arduino_uno.jpg">
+<!--           <a href="https://upload.wikimedia.org/wikipedia/commons/6/6f/Raspberry_Pi_B%2B_top.jpg/800px-Raspberry_pi.jpg">
+                <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Raspberry_Pi_B%2B_top.jpg/120px-Raspberry_pi.jpg",
+                    data-big="https://upload.wikimedia.org/wikipedia/commons/6/6f/Raspberry_Pi_B%2B_top.jpg/1400px-Raspberry_pi.jpg",
+                    data-title="Raspberry_pi"#}
+                    data-description="Raspberry_Pi micro-controller board."#}
+                >
+           </a>-->
+<!--            <a href="http://cdn.shopify.com/s/files/1/0775/1525/products/UNO-front_1024x1024.jpg?v=1449849152/800px-arduino_uno.jpg">
                 <img
                     src="http://cdn.shopify.com/s/files/1/0775/1525/products/UNO-front_1024x1024.jpg?v=1449849152/120px-arduino_uno.jpg",
                     data-big="http://cdn.shopify.com/s/files/1/0775/1525/products/UNO-front_1024x1024.jpg?v=1449849152/1400-px-arduino_uno.jpg",
                     data-title="arduino Uno"
                     data-discription="Arduino Uno"
                     >
-            </a>
-            <a href="/static/Images/photoArduino.jpg/800px-arduino_1.jpg">
+            </a>-->
+
+            <a href="/electronic_pdx/static/Images/photoArduino.jpg">
             <img
-                src="static/Images/photoArduino.jpg/120px-arduino_1.jpg",
-                data-big="static/Images/photoArduino.jpg/1400px-arduino_1.jpg",
+                src="static/Images/photoArduino.jpg",
+                data-big="static/Images/photoArduino.jpg",
                 data-title="Arduino-1 images"
                 data-discription="Arduino is a great micro-controller fir do it yourself projects"
             >
