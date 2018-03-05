@@ -1,4 +1,4 @@
-# Capston_Project
+# Capstone_Project
 A website for all kinds of DIY electronics.
 
 
