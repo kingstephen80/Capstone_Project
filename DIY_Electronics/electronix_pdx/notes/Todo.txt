@@ -1,6 +1,4 @@
 6-4-2016 Stephen King
 
 Suggested changes to be made to the ADMIN site for the Capstone Prject:
-Add a model that will create a user folder for images that can be added to multiple times, viewed in the admin window, and deleted from the folder. Images could be linked to a post or added later, they could be identified with a specific person or a group and give the permissions of rwd.
-
-
+Add a model that will create a user folder for images that can be added to multiple times, viewed in the admin window, and deleted from the folder. Images could be linked to a post or added later, they could be tagged to specific person or group, and give the permissions of rwd.
